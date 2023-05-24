@@ -1,23 +1,14 @@
-# Assessment 3 - Vanilla JS: LurkForWork
+# Vanilla JS: LurkForWork
 
 1. Background & Motivation
 2. The Task
-3. Getting Started
-4. Constraints & Assumptions
-5. Marking Criteria
-6. Originality of Work
-7. Submission
-8. Late Submission Policy
-
-## 0. Change Log
-
-13/03/2023 - Updated the description of the '/job/feed' endpoint in Swagger docs from 'all jobs' -> 'next 5 jobs'.
+3. 3. Getting started
 
 ## 1. Background & Motivation
 
 Web-based applications are becoming the most common way to build a digital capability accessible to a mass audience. While there are modern tools that help us build these rapidly, it's important to understand the fundamental JavaScript-based technology and architectures that exist, both to gain a deeper understanding for when these skills may be needed, but also to simply understand the mechanics of fundamental JS. Even when working with a high level framework like ReactJS, understanding (in-concept) the code that it is transpiled to will ensure you're a more well rounded web-based engineer.
 
-This assignment consists of building a **frontend** website in Vanilla JS (no ReactJS or other frameworks). This frontend will interact with a RESTful API HTTP backend that is built in JavaScript (NodeJS express server) and provided to you.
+This  consists of building a **frontend** website in Vanilla JS (no ReactJS or other frameworks). This frontend will interact with a RESTful API HTTP backend that is built in JavaScript (NodeJS express server) and provided to you.
 
 A theoretical background on how to interface with this API can be found the "promises & fetch" lecture.
 
@@ -33,7 +24,7 @@ Instead of providing visuals of what the frontend (your task) should look like, 
 
 The requirements describe a series of **screens**. Screens can be popups/modals, or entire pages. The use of that language is so that you can choose how you want it to be displayed. A screen is essentially a certain state of your web-based application.
 
-### 2.1. Milestone 1 - Registration & Login (9.4%)
+### 2.1. Milestone 1 - Registration & Login 
 
 This focuses on the basic user interface to register and log in to the site.
 
@@ -57,7 +48,7 @@ This focuses on the basic user interface to register and log in to the site.
  * Whenever the frontend or backend produces an error, there shall be an error popup on the screen with a message (either a message derived from the backend error response, or one meaningfully created on the frontend).
  * This popup can be closed/removed/deleted by pressing an "x" or "close" button.
 
-### 2.2. Milestone 2 - Basic Feed (14%)
+### 2.2. Milestone 2 - Basic Feed 
 
 Milestone 2 focuses on fetching feed data from the API. A feed and it's associated content should only be accessible to logged in users.
 
@@ -80,7 +71,7 @@ Each job should display:
   * The job description text
   * How many comments the job post has
 
-### 2.3. Milestone 3 - Advanced Feed (9.4%)
+### 2.3. Milestone 3 - Advanced Feed
  
 Milestone 3 focuses on a richer UX and will require some backend interaction.
 
@@ -104,7 +95,7 @@ Milestone 3 focuses on a richer UX and will require some backend interaction.
 * Users can page between sets of results in the feed using the position token with (`GET /job/feed`).
 * Note: You will automatically receive marks for this section if you end up implementing the infinite scroll alternative in a later milestone.
 
-### 2.4. Milestone 4 - Other users & profiles (14%)
+### 2.4. Milestone 4 - Other users & profiles
 
 Milestone 4 focuses predominately on user profiles and how users interact with them.
 
@@ -131,7 +122,7 @@ Milestone 4 focuses predominately on user profiles and how users interact with t
   * If the logged in user already watches this person, an unwatch button should exist.
 * Somewhere on the feed screen a button should also exist that prompts the enter to enter an email address in a popup. When entered, the email address is sent to `PUT /user/watch` to watch that particular user.
 
-### 2.5. Milestone 5 - Adding & updating content (9.3%)
+### 2.5. Milestone 5 - Adding & updating content 
 
 Milestone 5 focuses on addition and removing both content and comments.
 
@@ -145,49 +136,10 @@ Milestone 5 focuses on addition and removing both content and comments.
 #### 2.5.3. Leaving comments
 * Users can write comments on "jobs" via (`POST /job/comment`)
 
-### 2.6. Milestone 6 - Challenge Components (`advanced`) (9.3%)
+### 2.6. Milestone 6 - Challenge Components (`advanced`)
 
 #### 2.6.1. Infinite Scroll
 * Instead of pagination, users an infinitely scroll through results. For infinite scroll to be properly implemented you need to progressively load jobs as you scroll. 
-
-#### 2.6.2. Live Update
-* If a user likes a job or comments on a job, the job's likes and comments should update without requiring a page reload/refresh. This should be done with some kind of polling.
-
-*Polling is very inefficient for browsers, but can often be used as it simplifies the technical needs on the server.*
-
-#### 2.6.3. Push Notifications
-* Users can receive push notifications when a user they watch posts a job. To know whether someone or not has posted a job, you must "poll" the server (i.e. intermittent requests, maybe every second, that check the state). You can implement this either via browser's built in notification APIs or through your own custom built notifications/popups. The notifications are not required to exist outside of the webpage.
-
-_No course assistance in lectures will be provided for this component, you should do your own research as to how to implement this. There are extensive resources online._
-
-### 2.7. Milestone 7 - Very Challenge Components (`advanced *= 2`) (4.6%)
-
-#### 2.7.1. Static feed offline access
-* Users can access the most recent feed they've loaded even without an internet connection.
-* Cache information from the latest feed in local storage in case of outages.
-* When the user tries to interact with the website at all in offline mode (e.g. comment, like) they should receive errors
-
-_No course assistance will be provided for this component, you should do your own research as to how to implement this._
-
-#### 2.7.2 Fragment based URL routing
-Users can access different pages using URL fragments:
-```
-/#profile=1
-/#feed
-/#profile=4
-```
-
-_No course assistance in lectures or on the forum will be provided for this component, you should do your own research as to how to implement this._
-
-#### 2.8. Bonus Marks (5%)
-
-An extra 5% of the assignment can be attained via bonus marks, meaning a maximum mark of 105/100. Any bonus marks that extend your ass2 mark above 100% will bleed into other assignment marks, but cannot contribute outside of the 75% of the course that is allocated for assignment marks
-
-Your bonus feature(s) can be anything. You just have to think of something that could make your web app stand out in some minor or major way. Simple examples would include just making sure that your user interface and user experience stands out amongst other students, maybe through some user testing.
-
-You could also add extra features, such as some additional frontend form validations - the possibilities are limitless.
-
-If you do implement a bonus feature, describe the feature and its details in `bonus.md` in the root directory of this repository.
 
 ## 3. Getting started
 
@@ -198,8 +150,6 @@ Stub code has been provided to help you get started in:
  * `frontend/styles/global.css`
  * `frontend/src/helpers.js`
  * `frontend/src/main.js`
-
-You can modify or delete this stub code if you choose. It's simply here to potentially provide some help.
 
 To work with your frontend code locally with the web server, you may have to run another web server to serve the frontend's static files.
 
@@ -217,15 +167,11 @@ This will start up a second HTTP server where if you navigate to `http://localho
 
 ### 3.2. The Backend
 
-You are prohibited from modifying the backend. No work needs to be done on the backend. It's provided to you simply to power your frontend.
-
 The backend server exists in your individual repository. After you clone this repo, you must run `yarn install` in `backend` directory once.
 
 To run the backend server, simply run `yarn start` in the `backend` directory. This will start the backend.
 
 To view the API interface for the backend you can navigate to the base URL of the backend (e.g. `http://localhost:5005`). This will list all of the HTTP routes that you can interact with.
-
-We have provided you with a very basic starting database containing two users and one public channel with messages. You can look in `backend/database.json` to see the contents.
 
 Your backend is persistent in terms of data storage. That means the data will remain even after your express server process stops running. If you want to reset the data in the backend to the original starting state, you can run `yarn reset` in the backend directory. If you want to make a copy of the backend data (e.g. for a backup) then simply copy `database.json`. If you want to start with an empty database, you can run `yarn clear` in the backend directory.
 
@@ -236,162 +182,3 @@ The port that the backend runs on (and that the frontend can use) is specified i
 Please note: If you manually update database.json you will need to restart your server.
 
 Please note: You CANNOT modify the backend source code for bonus marks.
-
-### 3.3. Taking the first steps
-
-This is how we recommend you start the assignment:
- 1. Read the entire spec, including a thorough read of section 2 so you know what is ahead of you!
- 2. Try to load up the `index.html` on your browser with a simple "Hello world" text just to sanity check you know what page you're trying to load.
- 3. Plan out your UI by thinking about all of the key screens and what information they rely on
- 4. Try to load up the backend and verify you've got it working by making a simple API call to `/feed` (which should return you an empty list)
- 5. Good luck!
-
-## 4. Constraints & Assumptions
-
-### 4.1. Javascript
-
- * You must implement this assignment in ES6-compliant Vanilla JavaScript. You cannot use ReactJS, JQuery, or other abstract frameworks. You can not, for example, use a popular Javascript framework such as <a href="https://angular.io/">Angular</a> or <a href="https://reactjs.org/">React</a>.
- * You may **NOT** directly use external JavaScript. Do not use NPM except to install any other development libraries without prior approval from course authority.
-
-### 4.2. CSS and other libraries
-
- * You may use small amounts (&lt; 10 lines) of general purpose code (not specific to the assignment) obtained from a site such as Stack Overflow or other publically available resources. You should clearly attribute the source of this code in a comment with it. You can not otherwise use code written by another person.
- * You may include external CSS libraries in this assignment (with the `<link />` tag). You must attribute these sources (i.e. provide the URL/author in source code comments). For example, you are permitted to use the popular <a href="https://getbootstrap.com/">Bootstrap</a> CSS framework. Some Bootstrap functionality relies on accompanying Javascript. You are permitted to include this Javascript. The Javascript accompanying Bootstrap requires the popular general purpose Javascrpt library <a href="https://jquery.com/">jQuery</a>. You are permitted to include <b>jQuery</b> so bootstrap can use it. However you are not permitted to use <b>jQuery</b> in the code you write for the assignment.
-
-### 4.3. Browser Compatibility
-
-You should ensure that your programs have been tested on one of the following two browsers:
- * Locally, Google Chrome (various operating systems)
- * On CSE machines, Chromium
-
-### 4.4. Other Requirements
-
- * The specification is intentionally vague to allow you to build frontend components however you think are visually appropriate. Their size, positioning, colour, layout, is in virtually all cases completely up to you. We require some basic criteria, but it's mainly dictating elements and behaviour.
- * This is not a design assignment. You are expected to show common sense and critical thinking when it comes to basic user experience and visual layout, but you are not required to be creative to achieve full marks.
- * Your web app must be a single page app. This means that there is only one initial browser load of content on one html page, and all subsequent dynamic changes to the page are based on Javascript DOM manipulation. If you do not build a single page app (e.g. using links to multiple HTML pages), you will receive a 50% penalty of your mark.
-
-### 4.5. Static HTML, innerHTML, DOM manipulation
-
-In this assignment, you are:
- * Allowed to add static HTML/CSS to the stub website provided (i.e. you can put raw HTML/CSS as if it's a static page, even if you then later manipulate it with JavaScript).
- * Allowed to build HTML elements and add CSS properties to the DOM via JavaScript. We expect this to be the most common way students build these pages.
- * Are strictly **not** allowed to use the `innerHTML` property of nodes/tags to set the inner HTML of an element. This has security vulnerabilities and is in general not best practice. Either statically add the HTML/CSS and manipulate it with JavaScript, or generate and build nodes/elements in JavaScript (just like in lectures/tutes/labs), or both. But don't set inner HTML. The use of any `innerHTML` will result in a 50% penalty of your mark.
-
-### 4.6. Async, Await, Promises
-
-You are strictly **not** allowed to use the `async` and `await` syntax in this assignment. You must use ES6 Promises. The use of any `async` or `await` will result in a 50% penalty of your mark.
-
-## 5. Marking Criteria
-
-Your assignment will be hand-marked by tutor(s) in the course according to the criteria below.
-
-Please note: When we test your UI we will use a pre-loaded database JSON that already has jobs and users and watches added to it. 
-
-<table>
-	<tr>
-		<th>Criteria</th>
-		<th>Weighting</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>Compliance to task requirements</td>
-		<td>70%</td>
-		<td>
-			<ul>
-				<li>Each milestone specified a particular % of overall assignment (summing up to 70%). Implement those components as required to receive the marks.</li>
-        <li>You <b>MUST</b> update the <code>progress.csv</code> file in the root folder of this repository as you complete things partially or fully. The valid values are "NO", "PARTIAL", and "YES". Updating this is necessary so that your tutor knows what to focus on and what to avoid - giving them the best understanding of your work and provide you with marks you have earned.</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Mobile Responsiveness</td>
-		<td>15%</td>
-		<td>
-			<ul>
-				<li>Your application is usable for desktop sizes generally, tablet sizes generally, and mobile sizes generally (down to 400px wide, 700px high).</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Code Style</td>
-		<td>10%</td>
-		<td>
-			<ul>
-				<li>Your code is clean, well commented, with well-named variables, and is well laid out.</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Usability & Accessibility</td>
-		<td>5%</td>
-		<td>
-			<ul>
-				<li>Your application is usable and easy to navigate. No obvious usability issues or confusing layouts/flows.</li>
-				<li>Your application follows standard accessibility guidelines, such as use of alt tags, and colours that aren't inaccessible.</li>
-				<li>Describe any attempts you've made to improve the usability/accessibility in `usability.md`</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-    <td>(Bonus Marks) Extra Features</td>
-    <td>5%</td>
-    <td>
-      <ul>
-        <li>Implementation of extra features that are not included in the spec.</li>
-        <li>Extra features should be non-trivial, have a clear justification for existing, and show either a form of technical, product, or creative flare.</li>
-        <li>Any extra features written down in `BONUS.md` in the project folder</li>
-        <li>Any bonus marks that extend your ass3 mark above 100% will bleed into other assignment marks, but cannot contribute outside of the 80% of the course that is allocated for assignment marks</li>
-        <li><b>Expectations placed on solo groups will be half of that of pairs to achieve the same mark.</b></li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-## 6. Originality of Work
-
-The work you submit must be your own work. Submission of work partially or completely derived from
-any other person or jointly written with any other person is not permitted.
-
-The penalties for such an offence may include negative marks, automatic failure of the course and
-possibly other academic discipline. Assignment submissions will be examined both automatically and
-manually for such submissions.
-
-Relevant scholarship authorities will be informed if students holding scholarships are involved in
-an incident of plagiarism or other misconduct.
-
-Do not provide or show your assignment work to any other person &mdash; apart from the teaching
-staff of COMP6080.
-
-If you knowingly provide or show your assignment work to another person for any reason, and work
-derived from it is submitted, you may be penalized, even if the work was submitted without your
-knowledge or consent.  This may apply even if your work is submitted by a third party unknown to
-you.
-
-Every time you make commits or pushes on this repository, you are acknowledging that the work you
-submit is your own work (as described above).
-
-As per the course outline, "Pairs will be required to contribute regularly to gitlab and in reasonably equal contributions as we still assess contributions individually (there is no blanket group mark assigned). Failure to do so may result in a loss of marks."
-
-If you are not working in a pair, we still strongly encourage you to commit small amounts of code regularly. This will assist you in managing any allegations of plagiarism that you feel are not correct.
-
-Note you will not be penalized if your work has the potential to be taken without your consent or
-knowledge.
-
-## 8. Submission
-
-This assignment is due *Monday 27th of March, 10am*.
-
-To submit your assignment, you must complete the following two steps in order:
- * Ensure you've pushed all of your code to your gitlab master branch. You can check if you've done this properly by seeing what code is on the gitlab site on your master branch.
- 
-This will submit the latest commit on master as your submission.
-
-You do NOT have to run a submit command for this assignment (we are experimenting with not using the command).
-
-It is your responsibiltiy to ensure that your code can run successfully when cloned fresh from Gitlab.
-
-For pairs, only one team member needs to submit.
-
-## 8. Late Submission Policy
-
-No late submission are accepted.
